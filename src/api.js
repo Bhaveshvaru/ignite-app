@@ -30,8 +30,8 @@ const nextYear = `${currentYear + 1}-${currentMonth}-${currentDay}`
 
 //popular games
 const popular_games =`games?key=${process.env.REACT_APP_API_KEY}&dates=${lastYear},${currentDate}&ordering=-rating&page_size=10`;
-const upcoming_games = `games?key=${process.env.REACT_APP_API_KEY}&dates=${currentDate},${nextYear}$ordering=-added&page_size=10`
-const newGames = `games?key=${process.env.REACT_APP_API_KEY}&dates=${lastYear},${currentDate}$ordering=-released&page_size=10`
+const upcoming_games = `games?key=${process.env.REACT_APP_API_KEY}&dates=${currentDate},${nextYear}&ordering=-added&page_size=10`
+const newGames = `games?key=${process.env.REACT_APP_API_KEY}&dates=${lastYear},${currentDate}&ordering=-released&page_size=10`
 
 //export functions
 export  const popularGamesURL = () =>{
