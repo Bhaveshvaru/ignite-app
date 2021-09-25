@@ -43,3 +43,9 @@ export const  upcomingGamesURL=()=>{
 export const newGamesURL=()=>{
     return `${base_url}${newGames}`  
 }
+export const gameDetailsURL =(game_id)=>{
+    return `${base_url}games/${game_id}?key=${process.env.REACT_APP_API_KEY}`
+}
+export const gameScreenshotURl =(game_id)=>{
+    return `${base_url}games/${game_id}/screenshots?key=${process.env.REACT_APP_API_KEY}`
+}
