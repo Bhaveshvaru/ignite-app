@@ -11,28 +11,27 @@ const GameDetail =()=>{
     return (
         <CardShadow>
             <Detail>
-             
-                <div className="stats">
+                <Stats>
                     <div className="ratings">
                         <h3>{game.name}</h3>
                         <p>Rating: {game.rating} </p>
                     </div>
-                    <div className="info">
+                    <Info>
                         <h3>Platforms</h3>
-                        <div className="platforms">
+                        <Platforms>
                         {game.platforms.map(data => ( 
                             <h3 key={data.platform.id}>{data.platform.name}</h3>
                         ))}
-                        </div>
-                    </div>
-                </div>
+                        </Platforms>
+                    </Info>
+                </Stats>
        
-            <div className="media">
+            <Media>
                 <img src={game.background_image} alt={game.background_image} />
-            </div>
-            <div className="description">
+            </Media>
+            <Description>
                 <p>{game.description_raw}</p>  
-            </div>
+            </Description >
             <div className="gallery">
                 {screen.results.map(screen => (
                     <img src={screen.image} alt={game.background_image} key={screen.id} />
@@ -78,6 +77,39 @@ const Detail = styled(motion.div)`
   img {
     width: 100%;
   }
+`;
+
+const Stats = styled(motion.div)`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  img {
+    width: 2rem;
+    height: 2rem;
+    display: inline;
+  }
+`;
+
+const Info = styled(motion.div)`
+  text-align: center;
+`;
+const Platforms = styled(motion.div)`
+  display: flex;
+  justify-content: space-evenly;
+  img {
+    margin-left: 3rem;
+  }
+`;
+
+const Media = styled(motion.div)`
+  margin-top: 5rem;
+  img {
+    width: 100%;
+  }
+`;
+
+const Description = styled(motion.div)`
+  margin: 5rem 0rem;
 `;
 
 export default GameDetail;
