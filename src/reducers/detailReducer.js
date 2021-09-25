@@ -16,6 +16,7 @@ const detailReducer = (state=initialState,action)=>{
                 ...state,
                 isLoading: true,
             }
+     
         default: 
         return{...state}
     }
