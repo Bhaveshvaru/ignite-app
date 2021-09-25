@@ -3,7 +3,7 @@ import { useDispatch,useSelector} from 'react-redux'
 import {loadGames} from "../actions/gamesAction"
 import Game from '../components/Game'
 import styled from "styled-components"
-import {motion} from "framer-motion"
+import {motion,AnimatePresence, AnimateSharedLayout } from "framer-motion"
 import GameDetail from "../components/GameDetail";
 import {useLocation} from 'react-router-dom'
 
@@ -21,7 +21,9 @@ const Home = ()=>{
      
     return(
         <GameList>
-         { pathId && <GameDetail />  }
+          <AnimateSharedLayout type="crossfade">
+          <AnimatePresence>
+         { pathId && <GameDetail pathId={pathId}/> }
         <h2>Upcoming Games</h2>
         <Games>
           {upcoming.map((game) => (
@@ -55,6 +57,8 @@ const Home = ()=>{
               key={game.id}/>
             ))}
         </Games>
+        </AnimatePresence>
+        </AnimateSharedLayout>
         </GameList>
     )
 }
