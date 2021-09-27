@@ -87,7 +87,7 @@ const GameDetail =({pathId})=>{
                 </Stats>
        
             <Media>
-                <motion.img layoutId={`image ${pathId}`} src={smallImage(game.background_image,1280)} alt={game.background_image} />
+                <motion.img layoutId={`image ${pathId}`} src={game.background_image} alt={game.background_image} />
             </Media>
             <Description>
                 <p>{game.description_raw}</p>  
